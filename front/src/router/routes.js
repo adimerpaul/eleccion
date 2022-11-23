@@ -1,5 +1,7 @@
 import indexPage from "pages/IndexPage";
 import Login from "pages/Login";
+import User from "pages/User";
+import Predilecta from "pages/Predilecta";
 
 const routes = [
   {
@@ -7,6 +9,8 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: indexPage ,meta: {requiresAuth: true}},
+      { path: 'user', component: User ,meta: {requiresAuth: true}},
+      { path: 'predilecta', component: Predilecta ,meta: {requiresAuth: true}},
     ]
   },
   {

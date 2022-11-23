@@ -6,81 +6,18 @@ use App\Models\Predilecta;
 use App\Http\Requests\StorePredilectaRequest;
 use App\Http\Requests\UpdatePredilectaRequest;
 
-class PredilectaController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+class PredilectaController extends Controller{
+    public function index(){ return Predilecta::all();}
+    public function store(StorePredilectaRequest $request){ return Predilecta::create($request->all());}
+    public function show($id){ return Predilecta::find($id);}
+    public function update(UpdatePredilectaRequest $request, $id){
+        $predilecta = Predilecta::find($id);
+        $predilecta->update($request->all());
+        return $predilecta;
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StorePredilectaRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StorePredilectaRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Predilecta  $predilecta
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Predilecta $predilecta)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Predilecta  $predilecta
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Predilecta $predilecta)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdatePredilectaRequest  $request
-     * @param  \App\Models\Predilecta  $predilecta
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdatePredilectaRequest $request, Predilecta $predilecta)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Predilecta  $predilecta
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Predilecta $predilecta)
-    {
-        //
+    public function destroy($id){
+        $predilecta = Predilecta::find($id);
+        $predilecta->delete();
+        return $predilecta;
     }
 }

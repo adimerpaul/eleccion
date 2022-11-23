@@ -52,7 +52,8 @@
           <div class="col-2 flex flex-center">
             <q-btn round>
               <q-avatar size="38px">
-                <img v-if="store.user.avatar!=undefined" :src="url+'../imagenes/'+store.user.avatar">
+                <q-icon name="account_circle"  size="38px" color="primary" />
+                <!--                <img v-if="store.user.avatar!=undefined" :src="url+'../imagenes/'+store.user.avatar">-->
               </q-avatar>
               <q-menu>
                 <q-list style="min-width: 100px">
@@ -87,12 +88,12 @@
           <div class="row">
             <div class="col-3 flex flex-center">
               <!--              <q-avatar size="48px">-->
-              <q-icon color="primary" size="48px" name="o_schema" />
+              <q-icon color="primary" size="48px" name="o_how_to_vote" />
               <!--              </q-avatar>-->
             </div>
             <div class="col-9">
-              <div class="text-h6 text-bold " >Jornadas</div>
-              <div class="text-caption">1.4.8</div>
+              <div class="text-h6 text-bold " >Predilecta</div>
+              <div class="text-caption">A.C.F.O.</div>
             </div>
           </div>
         </q-item-label>
@@ -112,13 +113,13 @@
             </q-item>
             <q-item clickable exact to="user" active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
-                <q-icon name="people" />
+                <q-icon name="o_people" />
               </q-item-section>
               <q-item-section>
-                usuarios
+                Jurados
               </q-item-section>
             </q-item>
-            <q-item clickable exact to="predilectas" active-class="bg-blue-grey-6 text-white">
+            <q-item clickable exact to="predilecta" active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
                 <q-icon name="o_confirmation_number" />
               </q-item-section>
