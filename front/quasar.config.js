@@ -82,7 +82,7 @@ module.exports = configure(function (ctx) {
       env: {
         API: ctx.dev
           ? 'http://localhost:8000/api/'
-          : 'https://bjornada.siscenter.org/api/',
+          : 'https://cele.siscenter.org/api/',
         API_FRONT: ctx.dev
           ? 'http://localhost:8080/#/'
           : 'https://jornada.siscenter.org/#/',
