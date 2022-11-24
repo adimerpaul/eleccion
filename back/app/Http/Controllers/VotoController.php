@@ -5,82 +5,37 @@ namespace App\Http\Controllers;
 use App\Models\Voto;
 use App\Http\Requests\StoreVotoRequest;
 use App\Http\Requests\UpdateVotoRequest;
+use Illuminate\Http\Request;
 
-class VotoController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+class VotoController extends Controller{
+    public function index(){ return Voto::all();}
+    public function store(Request $request){
+        $count=Voto::where('user_id',$request->user()->id)->where('tipo',$request->tipo)->where('predilecta_id',$request->predilecta_id)->count();
+        if($count==0){
+            $voto=new Voto();
+            $voto->user_id=$request->user()->id;
+            $voto->tipo=$request->tipo;
+            $voto->predilecta_id=$request->predilecta_id;
+            $voto->puntaje=$request->puntaje;
+            $voto->save();
+        }else{
+            $voto=Voto::where('user_id',$request->user()->id)->where('tipo',$request->tipo)->where('predilecta_id',$request->predilecta_id)->first();
+
+            $voto->puntaje=$request->puntaje==null?"":$request->puntaje;
+
+            $voto->save();
+            return $request;
+        }
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function show($id){ return Voto::find($id);}
+    public function update(Request $request, $id){
+        $voto = Voto::find($id);
+        $voto->update($request->all());
+        return $voto;
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreVotoRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreVotoRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Voto  $voto
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Voto $voto)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Voto  $voto
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Voto $voto)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateVotoRequest  $request
-     * @param  \App\Models\Voto  $voto
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateVotoRequest $request, Voto $voto)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Voto  $voto
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Voto $voto)
-    {
-        //
+    public function destroy($id){
+        $voto = Voto::find($id);
+        $voto->delete();
+        return $voto;
     }
 }

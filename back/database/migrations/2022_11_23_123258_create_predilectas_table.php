@@ -15,19 +15,19 @@ return new class extends Migration
     {
         Schema::create('predilectas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('conjuto');
-            $table->string('edad');
-            $table->string('profesion');
-            $table->string('ocupacion');
-            $table->string('estatura');
-            $table->string('medidas');
-            $table->string('pasatiempo');
-            $table->string('color');
-            $table->string('deporte');
-            $table->string('foto1');
-            $table->string('foto2');
-            $table->string('foto3');
+            $table->string('nombre')->default('');
+            $table->string('conjunto')->default('');
+            $table->string('edad')->default('');
+            $table->string('profesion')->default('');
+            $table->string('ocupacion')->default('');
+            $table->string('estatura')->default('');
+            $table->string('medidas')->default('');
+            $table->string('pasatiempo')->default('');
+            $table->string('color')->default('');
+            $table->string('deporte')->default('');
+            $table->string('foto1')->default('avatar.png');
+            $table->string('foto2')->default('avatar.png');
+            $table->string('foto3')->default('avatar.png');
             $table->timestamps();
         });
     }

@@ -9,6 +9,15 @@ use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
+    public function updatePassword(Request $request,User $user){
+//        $this->validate($request, [
+//            'password' => 'required|string|min:8|confirmed',
+//        ]);
+        $user->password = Hash::make($request->password);
+        $user->save();
+        return $user;
+    }
+
     public function login(Request $request){
         $request->validate([
             'email' => 'required|email',
@@ -63,7 +72,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        return(User::create($request->all()));
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        return $user;
     }
 
     /**

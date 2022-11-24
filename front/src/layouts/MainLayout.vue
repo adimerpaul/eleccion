@@ -93,7 +93,7 @@
             </div>
             <div class="col-9">
               <div class="text-h6 text-bold " >Predilecta</div>
-              <div class="text-caption">A.C.F.O.</div>
+              <div class="text-caption">A.C.F.O. <q-badge color="primary">{{store.user.tipo}}</q-badge></div>
             </div>
           </div>
         </q-item-label>
@@ -111,7 +111,7 @@
                 Principal
               </q-item-section>
             </q-item>
-            <q-item clickable exact to="user" active-class="bg-blue-grey-6 text-white">
+            <q-item clickable exact to="user" v-if="store.user.tipo=='admin'" active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
                 <q-icon name="o_people" />
               </q-item-section>
@@ -119,7 +119,7 @@
                 Jurados
               </q-item-section>
             </q-item>
-            <q-item clickable exact to="predilecta" active-class="bg-blue-grey-6 text-white">
+            <q-item clickable exact to="predilecta" v-if="store.user.tipo=='admin'"  active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
                 <q-icon name="o_confirmation_number" />
               </q-item-section>

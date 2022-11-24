@@ -19,8 +19,14 @@ use Illuminate\Support\Facades\Route;
 //});
 Route::post('login', [\App\Http\Controllers\UserController::class, 'login']);
 Route::group(['middleware'=>'auth:sanctum'],function () {
+    Route::post('upload', [\App\Http\Controllers\UploadController::class, 'upload']);
+
     Route::post('me', [\App\Http\Controllers\UserController::class, 'me']);
+    Route::put('updatePassword/{user}', [\App\Http\Controllers\UserController::class, 'updatePassword']);
     Route::post('logout', [\App\Http\Controllers\UserController::class, 'logout']);
     Route::apiResource('user', \App\Http\Controllers\UserController::class);
     Route::apiResource('predilecta', \App\Http\Controllers\PredilectaController::class);
+    Route::apiResource('voto', \App\Http\Controllers\VotoController::class);
+    Route::get('predilectaVotos', [\App\Http\Controllers\PredilectaController::class,'predilectaVotos']);
+
 });

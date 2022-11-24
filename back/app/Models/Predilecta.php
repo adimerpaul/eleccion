@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Predilecta extends Model
 {
     use HasFactory;
+    protected $fillable= [
+        'nombre',
+        'conjunto',
+        'edad',
+        'profesion',
+        'ocupacion',
+        'estatura',
+        'medidas',
+        'pasatiempo',
+        'color',
+        'deporte',
+        'foto1',
+        'foto2',
+        'foto3',
+    ];
 }

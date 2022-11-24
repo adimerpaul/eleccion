@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('votos', function (Blueprint $table) {
             $table->id();
-            $table->integer('puntaje');
+            $table->string('puntaje');
+            $table->string('tipo')->default('');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('predilecta_id');
             $table->foreign('user_id')->references('id')->on('users');
