@@ -22,5 +22,9 @@ class Predilecta extends Model
         'foto1',
         'foto2',
         'foto3',
+        'nroBano',
+        'nroGala',
+        'nroFol',
+        'nroPre',
     ];
 }

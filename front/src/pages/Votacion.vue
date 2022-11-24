@@ -10,9 +10,17 @@
               <q-input v-model="filter"  outlined  dense placeholder="Buscar..." />
             </template>
             <template v-slot:body-cell-predilecta="props">
-              <q-td :props="props">
-                <div class="text-bold">{{props.row.nombre}}</div>
-                <div class="text-grey-8">{{props.row.conjunto}}</div>
+              <q-td :props="props" auto-width>
+                <q-item class="q-pa-none q-ma-none">
+                  <q-item-section avatar class="q-pa-none q-ma-none">
+                    <q-btn dense icon="o_assignment_ind" />
+                    <q-btn dense icon="o_photo_camera" />
+                  </q-item-section>
+                  <q-item-section class="q-pa-none q-ma-none">
+                    <div class="text-bold " style="width: 150px; white-space: normal;" >{{props.row.nombre}}</div>
+                    <div class="text-grey-8" style="width: 150px; white-space: normal;">{{props.row.conjunto}}</div>
+                  </q-item-section>
+                </q-item>
               </q-td>
             </template>
             <template v-slot:body-cell-bano="props">
@@ -60,10 +68,10 @@ export default {
       columnsPredilecta:[
         {name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left', sortable: true},
         {name: 'bano', label: 'TRAJE DE BAÑO', field: 'bano', align: 'left', sortable: true},
-        {name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left', sortable: true},
-        {name: 'fol', label: 'TRAJE DE FOLKLORICO', field: 'fol', align: 'left', sortable: true},
-        {name: 'pre', label: 'PREGUNTAS', field: 'pre', align: 'left', sortable: true},
-        {name: 'total', label: 'TOTAL', field: 'total', align: 'left', sortable: true},
+        // {name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left', sortable: true},
+        // {name: 'fol', label: 'TRAJE DE FOLKLORICO', field: 'fol', align: 'left', sortable: true},
+        // {name: 'pre', label: 'PREGUNTAS', field: 'pre', align: 'left', sortable: true},
+        // {name: 'total', label: 'TOTAL', field: 'total', align: 'left', sortable: true},
       ],
       num:[''],
       filter: '',
@@ -73,7 +81,7 @@ export default {
     }
   },
   created() {
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i <= 100; i++) {
       this.num.push(i)
     }
     this.predilectaGet()

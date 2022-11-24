@@ -183,6 +183,10 @@ export default {
       predilectaColums:[
         {name: 'option', field: 'option', label: 'Opciones', align: 'left', sortable: true},
         {name: 'nombre', field: 'nombre', label: 'Nombre', align: 'left', sortable: true},
+        {name: 'nroBano', field: 'nroBano', label: 'N° Baño', align: 'left', sortable: true},
+        {name: 'nroGala', field: 'nroGala', label: 'N° Gala', align: 'left', sortable: true},
+        {name: 'nroFol', field: 'nroFol', label: 'N° Folklorico', align: 'left', sortable: true},
+        {name: 'nroPre', field: 'nroPre', label: 'N° Pregunta', align: 'left', sortable: true},
         // {name: 'conjunto', field: 'conjunto', label: 'Conjunto', align: 'left', sortable: true},
         {name: 'edad', field: 'edad', label: 'Edad', align: 'left', sortable: true},
         {name: 'fotos', field: 'fotos', label: 'fotos', align: 'left', sortable: true},

@@ -25,6 +25,10 @@ return new class extends Migration
             $table->string('pasatiempo')->default('');
             $table->string('color')->default('');
             $table->string('deporte')->default('');
+            $table->string('nroBano')->nullable();
+            $table->string('nroGala')->nullable();
+            $table->string('nroFol')->nullable();
+            $table->string('nroPre')->nullable();
             $table->string('foto1')->default('avatar.png');
             $table->string('foto2')->default('avatar.png');
             $table->string('foto3')->default('avatar.png');

@@ -42,7 +42,15 @@ FROM predilectas;
         ");
 
     }
-    public function store(Request $request){ return Predilecta::create($request->all());}
+    public function store(Request $request){
+        $predilecta= Predilecta::create($request->all());
+        $predilecta->nroBano=$predilecta->id;
+        $predilecta->nroGala=$predilecta->id;
+        $predilecta->nroFol=$predilecta->id;
+        $predilecta->nroPre=$predilecta->id;
+        $predilecta->save();
+        return $predilecta;
+    }
     public function show($id){ return Predilecta::find($id);}
     public function update(Request $request, $id){
         $predilecta = Predilecta::find($id);
