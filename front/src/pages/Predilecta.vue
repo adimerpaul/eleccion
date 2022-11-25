@@ -153,15 +153,15 @@
   </q-dialog>
   <q-dialog full-width full-height v-model="showPhotoCarosel" >
     <q-card >
-      <q-card-section class="row items-center">
-        <div class="text-h6">Fotos {{predilecta.nombre}}</div>
-        <q-space />
-        <q-btn icon="close" flat round dense v-close-popup />
-      </q-card-section>
-      <q-card-section>
-
+<!--      <q-card-section class="row items-center">-->
+<!--        <div class="text-h6">Fotos {{predilecta.nombre}}</div>-->
+<!--        <q-space />-->
+<!--        <q-btn icon="close" flat round dense v-close-popup />-->
+<!--      </q-card-section>-->
+      <q-card-section >
+        <center>
         <q-carousel
-          style="border: 0px solid #000;height: 80vh;"
+          style="border: 0px solid #000;height: 80vh;width: 280px"
           animated
           v-model="slide"
           arrows
@@ -172,6 +172,7 @@
           <q-carousel-slide :name="2" :img-src="`${url}../imagenes/${predilecta.foto2}`" />
           <q-carousel-slide :name="3" :img-src="`${url}../imagenes/${predilecta.foto3}`" />
         </q-carousel>
+          </center>
       </q-card-section>
     </q-card>
   </q-dialog>

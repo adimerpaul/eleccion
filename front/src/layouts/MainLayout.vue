@@ -92,14 +92,14 @@
               <!--              </q-avatar>-->
             </div>
             <div class="col-9">
-              <div class="text-h6 text-bold " >Predilecta</div>
+              <div class="text-h6 text-bold " >Primera face</div>
               <div class="text-caption">A.C.F.O. <q-badge color="primary">{{store.user.tipo}}</q-badge></div>
             </div>
           </div>
         </q-item-label>
         <q-separator />
         <q-toolbar class="bg-primary text-white shadow-2">
-          <q-toolbar-title>Opciones</q-toolbar-title>
+          <q-toolbar-title>{{store.user.name}}</q-toolbar-title>
         </q-toolbar>
         <q-list bordered>
           <q-list >
@@ -127,15 +127,15 @@
                 Predilectas
               </q-item-section>
             </q-item>
-            <q-item clickable exact to="/votacion/nroBano" active-class="bg-blue-grey-6 text-white">
+            <q-item clickable exact to="/votacion/nroBano" v-if="store.user.tipo!='admin'" active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
                 <q-icon name="o_credit_card" />
               </q-item-section>
               <q-item-section>
-                Traje de casual
+                Traje de presentacion
               </q-item-section>
             </q-item>
-            <q-item clickable exact to="/votacion/nroGala" active-class="bg-blue-grey-6 text-white">
+            <q-item clickable exact to="/votacion/nroGala" v-if="store.user.tipo!='admin'" active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
                 <q-icon name="o_credit_card" />
               </q-item-section>
@@ -143,12 +143,12 @@
                 Traje de gala
               </q-item-section>
             </q-item>
-            <q-item clickable exact to="/votacion/nroFol" active-class="bg-blue-grey-6 text-white">
+            <q-item clickable exact to="/votacion/nroFol" v-if="store.user.tipo!='admin'" active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
                 <q-icon name="o_credit_card" />
               </q-item-section>
               <q-item-section>
-                Traje folclorico
+                Traje folklorico
               </q-item-section>
             </q-item>
 <!--            <q-item clickable exact to="/votacion/nroPre" active-class="bg-blue-grey-6 text-white">-->
@@ -159,7 +159,7 @@
 <!--                Preguntas-->
 <!--              </q-item-section>-->
 <!--            </q-item>-->
-            <q-item clickable exact to="/resultados" active-class="bg-blue-grey-6 text-white">
+            <q-item clickable exact to="/resultados" v-if="store.user.tipo=='admin'"  active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
                 <q-icon name="o_verified_user" />
               </q-item-section>
@@ -183,6 +183,11 @@
 <script>
 import {useCounterStore} from "stores/example-store";
 import {date} from "quasar";
+
+
+
+
+
 export default {
   name: 'MainLayout',
   data () {

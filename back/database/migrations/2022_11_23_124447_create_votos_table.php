@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('tipo')->default('');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('predilecta_id');
+            $table->string('estado')->default('INACTIVO');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('predilecta_id')->references('id')->on('predilectas');
             $table->timestamps();

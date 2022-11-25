@@ -4,7 +4,7 @@
     <q-card-section>
       <div class="row">
         <div class="col-12">
-          <q-table :rows="predilectas" :filter="filter" :columns="columnsPredilecta">
+          <q-table :rows="predilectas" :filter="filter" :columns="columnsPredilecta" :rows-per-page-options="[0]">
             <template v-slot:top-right>
               <q-btn flat icon="refresh" @click="refresh" />
               <q-input v-model="filter"  outlined  dense placeholder="Buscar..." />
@@ -17,11 +17,12 @@
                     <q-btn dense icon="o_photo_camera" @click="photoCarosel(props.row)" />
                   </q-item-section>
                   <q-item-section class="q-pa-none q-ma-none">
-                    <div class="text-bold " style="width: 150px; white-space: normal;" >
+<!--                    style="width: 150px; white-space: normal;"-->
+                    <div class="text-bold "  >
                       {{ props.pageIndex+1 }}.-
                       {{props.row.nombre}}
                     </div>
-                    <div class="text-grey-8" style="width: 150px; white-space: normal;">{{props.row.conjunto}}</div>
+                    <div class="text-grey-8">{{props.row.conjunto}}</div>
                   </q-item-section>
                 </q-item>
               </q-td>
@@ -62,25 +63,29 @@
   </q-card>
   <q-dialog full-width full-height v-model="showPhotoCarosel" >
     <q-card >
-      <q-card-section class="row items-center">
-        <div class="text-h6">Fotos {{predilecta.nombre}}</div>
-        <q-space />
-        <q-btn icon="close" flat round dense v-close-popup />
-      </q-card-section>
+<!--      <q-card-section class="row items-center">-->
+<!--        <div class="text-h6">Fotos {{predilecta.nombre}}</div>-->
+<!--        <q-space />-->
+<!--        <q-btn icon="close" flat round dense v-close-popup />-->
+<!--      </q-card-section>-->
       <q-card-section>
 
-        <q-carousel
-          style="border: 0px solid #000;height: 80vh;"
-          animated
-          v-model="slide"
-          arrows
-          navigation
-          infinite
-        >
-          <q-carousel-slide :name="1" :img-src="`${url}../imagenes/${predilecta.foto1}`" />
-          <q-carousel-slide :name="2" :img-src="`${url}../imagenes/${predilecta.foto2}`" />
-          <q-carousel-slide :name="3" :img-src="`${url}../imagenes/${predilecta.foto3}`" />
-        </q-carousel>
+        <q-card-section >
+          <center>
+            <q-carousel
+              style="border: 0px solid #000;height: 80vh;width: 280px"
+              animated
+              v-model="slide"
+              arrows
+              navigation
+              infinite
+            >
+              <q-carousel-slide :name="1" :img-src="`${url}../imagenes/${predilecta.foto1}`" />
+              <q-carousel-slide :name="2" :img-src="`${url}../imagenes/${predilecta.foto2}`" />
+              <q-carousel-slide :name="3" :img-src="`${url}../imagenes/${predilecta.foto3}`" />
+            </q-carousel>
+          </center>
+        </q-card-section>
       </q-card-section>
     </q-card>
   </q-dialog>
@@ -148,40 +153,66 @@ export default {
         this.nro = toParams
         if (this.nro=='nroBano'){
           this.columnsPredilecta.pop()
-          this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE CASUAL', field: 'bano', align: 'left', sortable: true})
+          this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE PRESENTACION', field: 'bano', align: 'left', sortable: true})
+          for (let i = 0; i <= 25; i++) {
+            this.num.push(i)
+          }
         }
         if (this.nro=='nroGala'){
           this.columnsPredilecta.pop()
           this.columnsPredilecta.push({name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left', sortable: true})
+          for (let i = 0; i <= 25; i++) {
+            this.num.push(i)
+          }
         }
         if (this.nro=='nroFol'){
           this.columnsPredilecta.pop()
           this.columnsPredilecta.push({name: 'fol', label: 'TRAJE DE FOLKLORICO', field: 'fol', align: 'left', sortable: true})
+          for (let i = 0; i <= 25; i++) {
+            this.num.push(i)
+          }
         }
         if (this.nro=='nroPre'){
           this.columnsPredilecta.pop()
           this.columnsPredilecta.push({name: 'pre', label: 'PREGUNTAS', field: 'pre', align: 'left', sortable: true})
+          for (let i = 0; i <= 25; i++) {
+            this.num.push(i)
+          }
         }
         this.predilectaGet()
       }
     )
    this.nro=( this.$route.params.id)
     if (this.nro=='nroBano'){
-      this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE CASUAL', field: 'bano', align: 'left', sortable: true})
+      this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left', sortable: true}]
+      this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE PRESENTACION', field: 'bano', align: 'left', sortable: true})
+      for (let i = 0; i <= 25; i++) {
+        this.num.push(i)
+      }
     }
     if (this.nro=='nroGala'){
+      this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left', sortable: true}]
       this.columnsPredilecta.push({name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left', sortable: true})
+      for (let i = 0; i <= 25; i++) {
+        this.num.push(i)
+      }
     }
     if (this.nro=='nroFol'){
+      this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left', sortable: true}]
       this.columnsPredilecta.push({name: 'fol', label: 'TRAJE DE FOLKLORICO', field: 'fol', align: 'left', sortable: true})
+      for (let i = 0; i <= 25; i++) {
+        this.num.push(i)
+      }
     }
     if (this.nro=='nroPre'){
+      this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left', sortable: true}]
       this.columnsPredilecta.push({name: 'pre', label: 'PREGUNTAS', field: 'pre', align: 'left', sortable: true})
+      for (let i = 0; i <= 25; i++) {
+        this.num.push(i)
+      }
     }
 
-    for (let i = 0; i <= 100; i++) {
-      this.num.push(i)
-    }
+
     this.predilectaGet()
   },
   methods:{

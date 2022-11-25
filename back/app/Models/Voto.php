@@ -13,6 +13,7 @@ class Voto extends Model
         'tipo',
         'predilecta_id',
         'puntaje',
+        'estado'
     ];
     public function predilecta(){
         return $this->belongsTo('App\Models\Predilecta');
