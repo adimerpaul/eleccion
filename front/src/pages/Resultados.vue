@@ -65,13 +65,13 @@ export default {
             align: 'left',
             sortable: true
           });
-          this.resultadoColumns.push({
-            name: 'pre'+(con),
-            label: 'pre'+(con),
-            field: 'pre'+(con),
-            align: 'left',
-            sortable: true
-          });
+          // this.resultadoColumns.push({
+          //   name: 'pre'+(con),
+          //   label: 'pre'+(con),
+          //   field: 'pre'+(con),
+          //   align: 'left',
+          //   sortable: true
+          // });
         }
       });
       this.resultadoColumns.push({

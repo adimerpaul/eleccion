@@ -148,7 +148,7 @@ export default {
         this.nro = toParams
         if (this.nro=='nroBano'){
           this.columnsPredilecta.pop()
-          this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE BAÑO', field: 'bano', align: 'left', sortable: true})
+          this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE CASUAL', field: 'bano', align: 'left', sortable: true})
         }
         if (this.nro=='nroGala'){
           this.columnsPredilecta.pop()
@@ -167,7 +167,7 @@ export default {
     )
    this.nro=( this.$route.params.id)
     if (this.nro=='nroBano'){
-      this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE BAÑO', field: 'bano', align: 'left', sortable: true})
+      this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE CASUAL', field: 'bano', align: 'left', sortable: true})
     }
     if (this.nro=='nroGala'){
       this.columnsPredilecta.push({name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left', sortable: true})

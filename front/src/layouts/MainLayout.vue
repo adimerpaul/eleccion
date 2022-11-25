@@ -132,7 +132,7 @@
                 <q-icon name="o_credit_card" />
               </q-item-section>
               <q-item-section>
-                Traje de baño
+                Traje de casual
               </q-item-section>
             </q-item>
             <q-item clickable exact to="/votacion/nroGala" active-class="bg-blue-grey-6 text-white">
@@ -151,14 +151,14 @@
                 Traje folclorico
               </q-item-section>
             </q-item>
-            <q-item clickable exact to="/votacion/nroPre" active-class="bg-blue-grey-6 text-white">
-              <q-item-section avatar>
-                <q-icon name="o_credit_card" />
-              </q-item-section>
-              <q-item-section>
-                Preguntas
-              </q-item-section>
-            </q-item>
+<!--            <q-item clickable exact to="/votacion/nroPre" active-class="bg-blue-grey-6 text-white">-->
+<!--              <q-item-section avatar>-->
+<!--                <q-icon name="o_credit_card" />-->
+<!--              </q-item-section>-->
+<!--              <q-item-section>-->
+<!--                Preguntas-->
+<!--              </q-item-section>-->
+<!--            </q-item>-->
             <q-item clickable exact to="/resultados" active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
                 <q-icon name="o_verified_user" />
