@@ -103,7 +103,7 @@
         </q-toolbar>
         <q-list bordered>
           <q-list >
-            <q-item clickable exact to="/" active-class="bg-blue-grey-6 text-white">
+            <q-item clickable exact to="//" active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
                 <q-icon name="o_home" />
               </q-item-section>
@@ -111,7 +111,7 @@
                 Principal
               </q-item-section>
             </q-item>
-            <q-item clickable exact to="user" v-if="store.user.tipo=='admin'" active-class="bg-blue-grey-6 text-white">
+            <q-item clickable exact to="/user" v-if="store.user.tipo=='admin'" active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
                 <q-icon name="o_people" />
               </q-item-section>
@@ -119,7 +119,7 @@
                 Jurados
               </q-item-section>
             </q-item>
-            <q-item clickable exact to="predilecta" v-if="store.user.tipo=='admin'"  active-class="bg-blue-grey-6 text-white">
+            <q-item clickable exact to="/predilecta" v-if="store.user.tipo=='admin'"  active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
                 <q-icon name="o_confirmation_number" />
               </q-item-section>
@@ -127,15 +127,39 @@
                 Predilectas
               </q-item-section>
             </q-item>
-            <q-item clickable exact to="votacion" active-class="bg-blue-grey-6 text-white">
+            <q-item clickable exact to="/votacion/nroBano" active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
                 <q-icon name="o_credit_card" />
               </q-item-section>
               <q-item-section>
-                Votacion
+                Traje de baño
               </q-item-section>
             </q-item>
-            <q-item clickable exact to="resultados" active-class="bg-blue-grey-6 text-white">
+            <q-item clickable exact to="/votacion/nroGala" active-class="bg-blue-grey-6 text-white">
+              <q-item-section avatar>
+                <q-icon name="o_credit_card" />
+              </q-item-section>
+              <q-item-section>
+                Traje de gala
+              </q-item-section>
+            </q-item>
+            <q-item clickable exact to="/votacion/nroFol" active-class="bg-blue-grey-6 text-white">
+              <q-item-section avatar>
+                <q-icon name="o_credit_card" />
+              </q-item-section>
+              <q-item-section>
+                Traje folclorico
+              </q-item-section>
+            </q-item>
+            <q-item clickable exact to="/votacion/nroPre" active-class="bg-blue-grey-6 text-white">
+              <q-item-section avatar>
+                <q-icon name="o_credit_card" />
+              </q-item-section>
+              <q-item-section>
+                Preguntas
+              </q-item-section>
+            </q-item>
+            <q-item clickable exact to="/resultados" active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
                 <q-icon name="o_verified_user" />
               </q-item-section>

@@ -9,8 +9,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class PredilectaController extends Controller{
-    public function index(){ return Predilecta::all();}
-    public function predilectaVotos(Request $request){
+    public function index(){
+        return Predilecta::all();
+    }
+    public function predilectaVotos(Request $request,$orden){
         $id= $request->user()->id;
         return DB::select("
         SELECT *
@@ -38,7 +40,7 @@ class PredilectaController extends Controller{
     	else (SELECT puntaje FROM votos WHERE user_id=$id AND tipo='PREGUNTAS' AND votos.predilecta_id=predilectas.id)
     end
 ) pre
-FROM predilectas;
+FROM predilectas ORDER BY $orden ASC;
         ");
 
     }

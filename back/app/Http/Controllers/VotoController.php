@@ -2,12 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Predilecta;
+use App\Models\User;
 use App\Models\Voto;
 use App\Http\Requests\StoreVotoRequest;
 use App\Http\Requests\UpdateVotoRequest;
 use Illuminate\Http\Request;
 
 class VotoController extends Controller{
+    public function resultados(){
+        $predilectas = Predilecta::all();
+        $usuarios = User::where('tipo','jurado')->get();
+
+        foreach ($predilectas as $predilecta) {
+            $total=0;
+            $con=0;
+            foreach ($usuarios as $usuario) {
+                $con++;
+                $bano = Voto::where('user_id', $usuario->id)->where('predilecta_id', $predilecta->id)->where('tipo','TRAJE DE BAÑO')->first();
+                $gala = Voto::where('user_id', $usuario->id)->where('predilecta_id', $predilecta->id)->where('tipo','TRAJE DE GALA')->first();
+                $fol = Voto::where('user_id', $usuario->id)->where('predilecta_id', $predilecta->id)->where('tipo','TRAJE DE FOLKLORICO')->first();
+                $pre = Voto::where('user_id', $usuario->id)->where('predilecta_id', $predilecta->id)->where('tipo','PREGUNTAS')->first();
+//                $predilecta['j'.$con]=$usuario->name;
+                $predilecta['bano'.$con]=$bano==null?0:$bano->puntaje;
+                $predilecta['gala'.$con]=$gala==null?0:$gala->puntaje;
+                $predilecta['fol'.$con]=$fol==null?0:$fol->puntaje;
+                $predilecta['pre'.$con]=$pre==null?0:$pre->puntaje;
+                $total+=$bano==null?0:$bano->puntaje;
+                $total+=$gala==null?0:$gala->puntaje;
+                $total+=$fol==null?0:$fol->puntaje;
+                $total+=$pre==null?0:$pre->puntaje;
+            }
+            $predilecta['total']=$total;
+        }
+        return $predilectas;
+    }
     public function index(){ return Voto::all();}
     public function store(Request $request){
         $count=Voto::where('user_id',$request->user()->id)->where('tipo',$request->tipo)->where('predilecta_id',$request->predilecta_id)->count();

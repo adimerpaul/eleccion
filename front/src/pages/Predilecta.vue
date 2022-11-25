@@ -4,8 +4,29 @@
     <template v-slot:top-right>
       <q-toolbar>
         <q-btn label="Crear" no-caps color="primary" icon="add_circle_outline" @click="showAddUserDialog = true;predilecta={};predilectaCrear=true" />
+        <q-btn flat icon="refresh" @click="predilectasGet" />
         <q-input v-model="search"  outlined  dense placeholder="Buscar..." />
       </q-toolbar>
+    </template>
+    <template v-slot:body-cell-nroBano="props">
+      <q-td :props="props" auto-width>
+        <q-select @update:model-value="nroUpdate($event,props.row.id,'nroBano')" dense outlined v-model="props.row.nroBano" :options="num" />
+      </q-td>
+    </template>
+    <template v-slot:body-cell-nroGala="props">
+      <q-td :props="props" auto-width>
+        <q-select @update:model-value="nroUpdate($event,props.row.id,'nroGala')" dense outlined v-model="props.row.nroGala" :options="num" />
+      </q-td>
+    </template>
+    <template v-slot:body-cell-nroFol="props">
+      <q-td :props="props" auto-width>
+        <q-select @update:model-value="nroUpdate($event,props.row.id,'nroFol')" dense outlined v-model="props.row.nroFol" :options="num" />
+      </q-td>
+    </template>
+    <template v-slot:body-cell-nroPre="props">
+      <q-td :props="props" auto-width>
+        <q-select @update:model-value="nroUpdate($event,props.row.id,'nroPre')" dense outlined v-model="props.row.nroPre" :options="num" />
+      </q-td>
     </template>
     <template v-slot:body-cell-fotos="props">
       <q-td :props="props" auto-width @click="photoCarosel(props.row)">
@@ -134,6 +155,8 @@
     <q-card >
       <q-card-section class="row items-center">
         <div class="text-h6">Fotos {{predilecta.nombre}}</div>
+        <q-space />
+        <q-btn icon="close" flat round dense v-close-popup />
       </q-card-section>
       <q-card-section>
 
@@ -160,6 +183,7 @@ export default {
   name: `Predilecta`,
   data () {
     return {
+      num: [],
       slide: 1,
       roles: [
         'INSCRIPCION',
@@ -201,6 +225,22 @@ export default {
     }
   },
   methods:{
+    nroUpdate(num, id, nro){
+
+      if (nro == 'nroBano'){
+        this.$api.put(`predilecta/${id}`, {nroBano: num}).then(res=>console.log(res.data))
+      }
+      if (nro == 'nroGala'){
+        this.$api.put(`predilecta/${id}`, {nroGala: num}).then(res=>console.log(res.data))
+      }
+      if (nro == 'nroFol'){
+        this.$api.put(`predilecta/${id}`, {nroFol: num}).then(res=>console.log(res.data))
+      }
+      if (nro == 'nroPre'){
+        this.$api.put(`predilecta/${id}`, {nroPre: num}).then(res=>console.log(res.data))
+      }
+
+    },
     onRejected (rejectedEntries) {
       this.$q.notify({
         type: 'negative',
@@ -466,6 +506,9 @@ export default {
   },
   created() {
     this.predilectasGet()
+    for (let i = 1; i <= 100; i++) {
+      this.num.push(i)
+    }
   }
 }
 </script>

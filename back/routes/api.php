@@ -27,6 +27,8 @@ Route::group(['middleware'=>'auth:sanctum'],function () {
     Route::apiResource('user', \App\Http\Controllers\UserController::class);
     Route::apiResource('predilecta', \App\Http\Controllers\PredilectaController::class);
     Route::apiResource('voto', \App\Http\Controllers\VotoController::class);
-    Route::get('predilectaVotos', [\App\Http\Controllers\PredilectaController::class,'predilectaVotos']);
+    Route::get('predilectaVotos/{ordenar}', [\App\Http\Controllers\PredilectaController::class,'predilectaVotos']);
+//    Route::get('ordenar/{ordenar}', [\App\Http\Controllers\PredilectaController::class,'ordenar']);
 
 });
+Route::get('resultados', [\App\Http\Controllers\VotoController::class,'resultados']);

@@ -27,4 +27,7 @@ class Predilecta extends Model
         'nroFol',
         'nroPre',
     ];
+    public function votos(){
+        return $this->hasMany('App\Models\Voto')->with('user');
+    }
 }
