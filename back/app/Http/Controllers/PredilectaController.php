@@ -40,7 +40,7 @@ class PredilectaController extends Controller{
     	else (SELECT puntaje FROM votos WHERE user_id=$id AND tipo='PREGUNTAS' AND votos.predilecta_id=predilectas.id)
     end
 ) pre
-FROM predilectas ORDER BY $orden ASC;
+FROM predilectas ORDER BY CAST($orden as int) ASC;
         ");
 
     }
