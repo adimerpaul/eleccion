@@ -47,14 +47,14 @@ export default {
           con++;
           this.resultadoColumns.push({
             name: 'bano'+(con),
-            label: ' presentacion J'+(con),
+            label: 'Presentacion J'+(con),
             field: 'bano'+(con),
             align: 'left',
             sortable: true
           });
           this.resultadoColumns.push({
             name: 'gala'+(con),
-            label: 'de Gala J'+(con),
+            label: 'Gala J'+(con),
             field: 'gala'+(con),
             align: 'left',
             sortable: true
