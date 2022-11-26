@@ -154,6 +154,7 @@ export default {
         if (this.nro=='nroBano'){
           this.columnsPredilecta.pop()
           this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE PRESENTACION', field: 'bano', align: 'left', sortable: true})
+          this.num=['']
           for (let i = 0; i <= 25; i++) {
             this.num.push(i)
           }
@@ -161,6 +162,7 @@ export default {
         if (this.nro=='nroGala'){
           this.columnsPredilecta.pop()
           this.columnsPredilecta.push({name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left', sortable: true})
+          this.num=['']
           for (let i = 0; i <= 25; i++) {
             this.num.push(i)
           }
@@ -168,6 +170,7 @@ export default {
         if (this.nro=='nroFol'){
           this.columnsPredilecta.pop()
           this.columnsPredilecta.push({name: 'fol', label: 'TRAJE DE FOLKLORICO', field: 'fol', align: 'left', sortable: true})
+          this.num=['']
           for (let i = 0; i <= 30; i++) {
             this.num.push(i)
           }
@@ -175,6 +178,7 @@ export default {
         if (this.nro=='nroPre'){
           this.columnsPredilecta.pop()
           this.columnsPredilecta.push({name: 'pre', label: 'PREGUNTAS', field: 'pre', align: 'left', sortable: true})
+          this.num=['']
           for (let i = 0; i <= 25; i++) {
             this.num.push(i)
           }
@@ -186,6 +190,7 @@ export default {
     if (this.nro=='nroBano'){
       this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left', sortable: true}]
       this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE PRESENTACION', field: 'bano', align: 'left', sortable: true})
+      this.num=['']
       for (let i = 0; i <= 25; i++) {
         this.num.push(i)
       }
@@ -193,6 +198,7 @@ export default {
     if (this.nro=='nroGala'){
       this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left', sortable: true}]
       this.columnsPredilecta.push({name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left', sortable: true})
+      this.num=['']
       for (let i = 0; i <= 25; i++) {
         this.num.push(i)
       }
@@ -200,6 +206,7 @@ export default {
     if (this.nro=='nroFol'){
       this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left', sortable: true}]
       this.columnsPredilecta.push({name: 'fol', label: 'TRAJE DE FOLKLORICO', field: 'fol', align: 'left', sortable: true})
+      this.num=['']
       for (let i = 0; i <= 30; i++) {
         this.num.push(i)
       }
@@ -207,6 +214,7 @@ export default {
     if (this.nro=='nroPre'){
       this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left', sortable: true}]
       this.columnsPredilecta.push({name: 'pre', label: 'PREGUNTAS', field: 'pre', align: 'left', sortable: true})
+      this.num=['']
       for (let i = 0; i <= 25; i++) {
         this.num.push(i)
       }
