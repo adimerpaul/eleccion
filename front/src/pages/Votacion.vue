@@ -51,19 +51,19 @@
             <template v-slot:body-cell-bano="props">
               <q-td :props="props" >
 <!--                <q-input @keyup="votoUpdate(props.row.bano,props.row.id,'TRAJE DE BAÑO')" :model-value="props.row.bano" outlined dense style="width: 10em;text-align: center" type="number" :rules="[val => val > -1 || 'Debe ser mayor a 0', val => val < 100 || 'Debe ser menor a 100']" />-->
-                <q-select bg-color="purple-2"  :popup-content-style="{ backgroundColor: '#E1BEE7' }" @update:model-value="votoUpdate($event,props.row.id,'TRAJE DE BAÑO')" dense outlined v-model="props.row.bano" :options="num" />
+                <q-select key="1" bg-color="purple-2"  :popup-content-style="{ backgroundColor: '#E1BEE7' }" @update:model-value="votoUpdate($event,props.row.id,'TRAJE DE BAÑO')" dense outlined v-model="props.row.bano" :options="num" />
               </q-td>
             </template>
             <template v-slot:body-cell-gala="props">
               <q-td :props="props" >
 <!--                <q-input @keyup="votoUpdate(props.row.gala,props.row.id,'TRAJE DE GALA')"  v-model="props.row.gala" outlined dense style="width: 10em;text-align: center" type="number" :rules="[val => val > -1 || 'Debe ser mayor a 0', val => val < 100 || 'Debe ser menor a 100']" />-->
-                <q-select bg-color="pink-2"  :popup-content-style="{ backgroundColor: '#F8BBD0' }" @update:model-value="votoUpdate($event,props.row.id,'TRAJE DE GALA')" dense outlined v-model="props.row.gala" :options="num" />
+                <q-select key="2" bg-color="pink-2"  :popup-content-style="{ backgroundColor: '#F8BBD0' }" @update:model-value="votoUpdate($event,props.row.id,'TRAJE DE GALA')" dense outlined v-model="props.row.gala" :options="num" />
               </q-td>
             </template>
             <template v-slot:body-cell-fol="props">
               <q-td :props="props" >
 <!--                <q-input @keyup="votoUpdate(props.row.fol,props.row.id,'TRAJE DE FOLKLORICO')"  v-model="props.row.fol" outlined dense style="width: 10em;text-align: center" type="number" :rules="[val => val > -1 || 'Debe ser mayor a 0', val => val < 100 || 'Debe ser menor a 100']" />-->
-                <q-select bg-color="green-2"  :popup-content-style="{ backgroundColor: '#C8E6C9' }"  @update:model-value="votoUpdate($event,props.row.id,'TRAJE DE FOLKLORICO')" dense outlined v-model="props.row.fol" :options="num" />
+                <q-select key="3" bg-color="green-2"  :popup-content-style="{ backgroundColor: '#C8E6C9' }"  @update:model-value="votoUpdate($event,props.row.id,'TRAJE DE FOLKLORICO')" dense outlined v-model="props.row.fol" :options="num" />
               </q-td>
             </template>
             <template v-slot:body-cell-pre="props">
