@@ -5,6 +5,27 @@
       <div class="row">
         <div class="col-12">
           <q-table :rows="predilectas" :filter="filter" :columns="columnsPredilecta" :rows-per-page-options="[0]">
+            <template v-slot:header-cell-bano="props">
+              <q-th :props="props" auto-width>
+                  <div class="text-bold text-red text-h5">TRAJE DE PRESENTACION</div>
+                  <div>Dominio de escenario y desplazamiento</div>
+                  <div>(1 - 25 pts.)</div>
+              </q-th>
+            </template>
+            <template v-slot:header-cell-gala="props">
+              <q-th :props="props" auto-width>
+                  <div class="text-bold text-red text-h5">TRAJE DE GALA</div>
+                  <div>Simpatia y Elegancia</div>
+                  <div>(1 - 25 pts.)</div>
+              </q-th>
+            </template>
+            <template v-slot:header-cell-fol="props">
+              <q-th :props="props" auto-width>
+                  <div class="text-bold text-red text-h5">TRAJE FOLKLORICO</div>
+                  <div>Danza y vestimenta</div>
+                  <div>(1 - 30 pts.)</div>
+              </q-th>
+            </template>
             <template v-slot:top-right>
               <q-btn flat icon="refresh" @click="refresh" />
               <q-input v-model="filter"  outlined  dense placeholder="Buscar..." />
