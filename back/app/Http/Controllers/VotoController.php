@@ -33,6 +33,9 @@ class VotoController extends Controller{
                 $total+=$fol==null?0:$fol->puntaje;
                 $total+=$pre==null?0:$pre->puntaje;
             }
+            $asi = Voto::where('user_id', 2)->where('predilecta_id', $predilecta->id)->where('tipo','ASISTENCIA')->first();
+            $predilecta['asistencia']=$asi==null?0:$asi->puntaje;
+            $total+=$asi==null?0:$asi->puntaje;
             $predilecta['total']=$total;
         }
         return $predilectas;

@@ -47,21 +47,21 @@ export default {
           con++;
           this.resultadoColumns.push({
             name: 'bano'+(con),
-            label: 'Presentacion '+(con),
+            label: ' presentacion J'+(con),
             field: 'bano'+(con),
             align: 'left',
             sortable: true
           });
           this.resultadoColumns.push({
             name: 'gala'+(con),
-            label: 'Gala '+(con),
+            label: 'de Gala J'+(con),
             field: 'gala'+(con),
             align: 'left',
             sortable: true
           });
           this.resultadoColumns.push({
             name: 'fol'+(con),
-            label: 'Folklorico'+(con),
+            label: 'Folklórico J'+(con),
             field: 'fol'+(con),
             align: 'left',
             sortable: true
@@ -74,6 +74,13 @@ export default {
           //   sortable: true
           // });
         }
+      });
+      this.resultadoColumns.push({
+        name: 'asistencia',
+        label: 'Asistencia 20Pts',
+        field: 'asistencia',
+        align: 'left',
+        sortable: true
       });
       this.resultadoColumns.push({
         name: 'total',
