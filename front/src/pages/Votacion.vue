@@ -49,25 +49,25 @@
               </q-td>
             </template>
             <template v-slot:body-cell-bano="props">
-              <q-td :props="props">
+              <q-td :props="props" >
 <!--                <q-input @keyup="votoUpdate(props.row.bano,props.row.id,'TRAJE DE BAÑO')" :model-value="props.row.bano" outlined dense style="width: 10em;text-align: center" type="number" :rules="[val => val > -1 || 'Debe ser mayor a 0', val => val < 100 || 'Debe ser menor a 100']" />-->
-                <q-select @update:model-value="votoUpdate($event,props.row.id,'TRAJE DE BAÑO')" dense outlined v-model="props.row.bano" :options="num" />
+                <q-select bg-color="purple-2"  :popup-content-style="{ backgroundColor: '#E1BEE7' }" @update:model-value="votoUpdate($event,props.row.id,'TRAJE DE BAÑO')" dense outlined v-model="props.row.bano" :options="num" />
               </q-td>
             </template>
             <template v-slot:body-cell-gala="props">
-              <q-td :props="props">
+              <q-td :props="props" >
 <!--                <q-input @keyup="votoUpdate(props.row.gala,props.row.id,'TRAJE DE GALA')"  v-model="props.row.gala" outlined dense style="width: 10em;text-align: center" type="number" :rules="[val => val > -1 || 'Debe ser mayor a 0', val => val < 100 || 'Debe ser menor a 100']" />-->
-                <q-select @update:model-value="votoUpdate($event,props.row.id,'TRAJE DE GALA')" dense outlined v-model="props.row.gala" :options="num" />
+                <q-select bg-color="pink-2"  :popup-content-style="{ backgroundColor: '#F8BBD0' }" @update:model-value="votoUpdate($event,props.row.id,'TRAJE DE GALA')" dense outlined v-model="props.row.gala" :options="num" />
               </q-td>
             </template>
             <template v-slot:body-cell-fol="props">
-              <q-td :props="props">
+              <q-td :props="props" >
 <!--                <q-input @keyup="votoUpdate(props.row.fol,props.row.id,'TRAJE DE FOLKLORICO')"  v-model="props.row.fol" outlined dense style="width: 10em;text-align: center" type="number" :rules="[val => val > -1 || 'Debe ser mayor a 0', val => val < 100 || 'Debe ser menor a 100']" />-->
-                <q-select @update:model-value="votoUpdate($event,props.row.id,'TRAJE DE FOLKLORICO')" dense outlined v-model="props.row.fol" :options="num" />
+                <q-select bg-color="green-2"  :popup-content-style="{ backgroundColor: '#C8E6C9' }"  @update:model-value="votoUpdate($event,props.row.id,'TRAJE DE FOLKLORICO')" dense outlined v-model="props.row.fol" :options="num" />
               </q-td>
             </template>
             <template v-slot:body-cell-pre="props">
-              <q-td :props="props">
+              <q-td :props="props" >
 <!--                <q-input @keyup="votoUpdate(props.row.pre,props.row.id,'PREGUNTAS')" v-model="props.row.pre" outlined dense style="width: 10em;text-align: center" type="number" :rules="[val => val > -1 || 'Debe ser mayor a 0', val => val < 100 || 'Debe ser menor a 100']" />-->
                 <q-select @update:model-value="votoUpdate($event,props.row.id,'PREGUNTAS')" dense outlined v-model="props.row.pre" :options="num" />
               </q-td>
@@ -146,12 +146,12 @@ export default {
       slide: 1,
       showPhotoCarosel: false,
       columnsPredilecta:[
-        {name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left', sortable: true},
-        // {name: 'bano', label: 'TRAJE DE BAÑO', field: 'bano', align: 'left', sortable: true},
-        // {name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left', sortable: true},
-        // {name: 'fol', label: 'TRAJE DE FOLKLORICO', field: 'fol', align: 'left', sortable: true},
-        // {name: 'pre', label: 'PREGUNTAS', field: 'pre', align: 'left', sortable: true},
-        // {name: 'total', label: 'TOTAL', field: 'total', align: 'left', sortable: true},
+        {name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left'},
+        // {name: 'bano', label: 'TRAJE DE BAÑO', field: 'bano', align: 'left'},
+        // {name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left'},
+        // {name: 'fol', label: 'TRAJE DE FOLKLORICO', field: 'fol', align: 'left'},
+        // {name: 'pre', label: 'PREGUNTAS', field: 'pre', align: 'left'},
+        // {name: 'total', label: 'TOTAL', field: 'total', align: 'left'},
       ],
       url:process.env.API,
       num:[''],
@@ -174,7 +174,7 @@ export default {
         this.nro = toParams
         if (this.nro=='nroBano'){
           this.columnsPredilecta.pop()
-          this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE PRESENTACION', field: 'bano', align: 'left', sortable: true})
+          this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE PRESENTACION', field: 'bano', align: 'left'})
           this.num=['']
           for (let i = 0; i <= 25; i++) {
             this.num.push(i)
@@ -182,7 +182,7 @@ export default {
         }
         if (this.nro=='nroGala'){
           this.columnsPredilecta.pop()
-          this.columnsPredilecta.push({name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left', sortable: true})
+          this.columnsPredilecta.push({name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left'})
           this.num=['']
           for (let i = 0; i <= 25; i++) {
             this.num.push(i)
@@ -190,7 +190,7 @@ export default {
         }
         if (this.nro=='nroFol'){
           this.columnsPredilecta.pop()
-          this.columnsPredilecta.push({name: 'fol', label: 'TRAJE DE FOLKLORICO', field: 'fol', align: 'left', sortable: true})
+          this.columnsPredilecta.push({name: 'fol', label: 'TRAJE DE FOLKLORICO', field: 'fol', align: 'left'})
           this.num=['']
           for (let i = 0; i <= 30; i++) {
             this.num.push(i)
@@ -198,7 +198,7 @@ export default {
         }
         if (this.nro=='nroPre'){
           this.columnsPredilecta.pop()
-          this.columnsPredilecta.push({name: 'pre', label: 'PREGUNTAS', field: 'pre', align: 'left', sortable: true})
+          this.columnsPredilecta.push({name: 'pre', label: 'PREGUNTAS', field: 'pre', align: 'left'})
           this.num=['']
           for (let i = 0; i <= 25; i++) {
             this.num.push(i)
@@ -209,32 +209,32 @@ export default {
     )
    this.nro=( this.$route.params.id)
     if (this.nro=='nroBano'){
-      this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left', sortable: true}]
-      this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE PRESENTACION', field: 'bano', align: 'left', sortable: true})
+      this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left'}]
+      this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE PRESENTACION', field: 'bano', align: 'left'})
       this.num=['']
       for (let i = 0; i <= 25; i++) {
         this.num.push(i)
       }
     }
     if (this.nro=='nroGala'){
-      this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left', sortable: true}]
-      this.columnsPredilecta.push({name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left', sortable: true})
+      this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left'}]
+      this.columnsPredilecta.push({name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left'})
       this.num=['']
       for (let i = 0; i <= 25; i++) {
         this.num.push(i)
       }
     }
     if (this.nro=='nroFol'){
-      this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left', sortable: true}]
-      this.columnsPredilecta.push({name: 'fol', label: 'TRAJE DE FOLKLORICO', field: 'fol', align: 'left', sortable: true})
+      this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left'}]
+      this.columnsPredilecta.push({name: 'fol', label: 'TRAJE DE FOLKLORICO', field: 'fol', align: 'left'})
       this.num=['']
       for (let i = 0; i <= 30; i++) {
         this.num.push(i)
       }
     }
     if (this.nro=='nroPre'){
-      this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left', sortable: true}]
-      this.columnsPredilecta.push({name: 'pre', label: 'PREGUNTAS', field: 'pre', align: 'left', sortable: true})
+      this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left'}]
+      this.columnsPredilecta.push({name: 'pre', label: 'PREGUNTAS', field: 'pre', align: 'left'})
       this.num=['']
       for (let i = 0; i <= 25; i++) {
         this.num.push(i)
