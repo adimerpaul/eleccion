@@ -23,19 +23,20 @@ class VotoController extends Controller{
                 $gala = Voto::where('user_id', $usuario->id)->where('predilecta_id', $predilecta->id)->where('tipo','TRAJE DE GALA')->first();
                 $fol = Voto::where('user_id', $usuario->id)->where('predilecta_id', $predilecta->id)->where('tipo','TRAJE DE FOLKLORICO')->first();
                 $pre = Voto::where('user_id', $usuario->id)->where('predilecta_id', $predilecta->id)->where('tipo','PREGUNTAS')->first();
+//                return $bano;
 //                $predilecta['j'.$con]=$usuario->name;
-                $predilecta['bano'.$con]=$bano==null?0:$bano->puntaje;
-                $predilecta['gala'.$con]=$gala==null?0:$gala->puntaje;
-                $predilecta['fol'.$con]=$fol==null?0:$fol->puntaje;
-                $predilecta['pre'.$con]=$pre==null?0:$pre->puntaje;
-                $total+=$bano==null?0:$bano->puntaje;
-                $total+=$gala==null?0:$gala->puntaje;
-                $total+=$fol==null?0:$fol->puntaje;
-                $total+=$pre==null?0:$pre->puntaje;
+                $predilecta['bano'.$con]=$bano==null||$bano->puntaje==''?0:$bano->puntaje;
+                $predilecta['gala'.$con]=$gala==null||$gala->puntaje==''?0:$gala->puntaje;
+                $predilecta['fol'.$con]=$fol==null||$fol->puntaje==''?0:$fol->puntaje;
+                $predilecta['pre'.$con]=$pre==null||$pre->puntaje==''?0:$pre->puntaje;
+                $total+=$bano==null||$bano->puntaje==''?0:$bano->puntaje;
+                $total+=$gala==null||$gala->puntaje==''?0:$gala->puntaje;
+                $total+=$fol==null||$fol->puntaje==''?0:$fol->puntaje;
+                $total+=$pre==null||$pre->puntaje==''?0:$pre->puntaje;
             }
             $asi = Voto::where('user_id', 2)->where('predilecta_id', $predilecta->id)->where('tipo','ASISTENCIA')->first();
             $predilecta['asistencia']=$asi==null?0:$asi->puntaje;
-            $total+=$asi==null?0:$asi->puntaje;
+            $total+=$asi==null||$asi->puntaje==''?0:$asi->puntaje;
             $predilecta['total']=$total;
         }
         return $predilectas;
