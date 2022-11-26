@@ -8,7 +8,7 @@
         <q-btn to="/votacion/nroGala" color="primary" label="traje de gala" />
       </div>
       <div class="col-6 col-md-3 flex flex-center">
-        <q-btn to="/votacion/nroFOl" color="primary" label="traje de folclorico" />
+        <q-btn to="/votacion/nroFol" color="primary" label="traje de folclorico" />
       </div>
 <!--      <div class="col-6 col-md-3 flex flex-center">-->
 <!--        <q-btn to="/votacion/nroPre" color="primary" label="preguntas" />-->
