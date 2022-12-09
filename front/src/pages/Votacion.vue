@@ -9,14 +9,14 @@
               <q-th :props="props" auto-width>
                   <div class="text-bold text-red text-h5">TRAJE DE PRESENTACION</div>
                   <div>Dominio de escenario y desplazamiento</div>
-                  <div>(1 - 25 pts.)</div>
+                  <div>(1 - 30 pts.)</div>
               </q-th>
             </template>
             <template v-slot:header-cell-gala="props">
               <q-th :props="props" auto-width>
                   <div class="text-bold text-red text-h5">TRAJE DE GALA</div>
                   <div>Simpatia y Elegancia</div>
-                  <div>(1 - 25 pts.)</div>
+                  <div>(1 - 30 pts.)</div>
               </q-th>
             </template>
             <template v-slot:header-cell-fol="props">
@@ -24,6 +24,13 @@
                   <div class="text-bold text-red text-h5">TRAJE FOLKLORICO</div>
                   <div>Danza y vestimenta</div>
                   <div>(1 - 30 pts.)</div>
+              </q-th>
+            </template>
+            <template v-slot:header-cell-pre="props">
+              <q-th :props="props" auto-width>
+                <div class="text-bold text-red text-h5">PREGUNTAS</div>
+                <div>Preguntas</div>
+                <div>(1 - 10 pts.)</div>
               </q-th>
             </template>
             <template v-slot:top-right>
@@ -176,7 +183,7 @@ export default {
           this.columnsPredilecta.pop()
           this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE PRESENTACION', field: 'bano', align: 'left'})
           this.num=['']
-          for (let i = 0; i <= 25; i++) {
+          for (let i = 0; i <= 30; i++) {
             this.num.push(i)
           }
         }
@@ -184,7 +191,7 @@ export default {
           this.columnsPredilecta.pop()
           this.columnsPredilecta.push({name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left'})
           this.num=['']
-          for (let i = 0; i <= 25; i++) {
+          for (let i = 0; i <= 30; i++) {
             this.num.push(i)
           }
         }
@@ -200,7 +207,7 @@ export default {
           this.columnsPredilecta.pop()
           this.columnsPredilecta.push({name: 'pre', label: 'PREGUNTAS', field: 'pre', align: 'left'})
           this.num=['']
-          for (let i = 0; i <= 25; i++) {
+          for (let i = 0; i <= 10; i++) {
             this.num.push(i)
           }
         }
@@ -212,7 +219,7 @@ export default {
       this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left'}]
       this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE PRESENTACION', field: 'bano', align: 'left'})
       this.num=['']
-      for (let i = 0; i <= 25; i++) {
+      for (let i = 0; i <= 30; i++) {
         this.num.push(i)
       }
     }
@@ -220,7 +227,7 @@ export default {
       this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left'}]
       this.columnsPredilecta.push({name: 'gala', label: 'TRAJE DE GALA', field: 'gala', align: 'left'})
       this.num=['']
-      for (let i = 0; i <= 25; i++) {
+      for (let i = 0; i <= 30; i++) {
         this.num.push(i)
       }
     }
@@ -236,7 +243,7 @@ export default {
       this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left'}]
       this.columnsPredilecta.push({name: 'pre', label: 'PREGUNTAS', field: 'pre', align: 'left'})
       this.num=['']
-      for (let i = 0; i <= 25; i++) {
+      for (let i = 0; i <= 10; i++) {
         this.num.push(i)
       }
     }

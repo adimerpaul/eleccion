@@ -47,41 +47,41 @@ export default {
           con++;
           this.resultadoColumns.push({
             name: 'bano'+(con),
-            label: 'Presentacion J'+(con),
+            label: 'PresJ'+(con),
             field: 'bano'+(con),
             align: 'left',
             sortable: true
           });
           this.resultadoColumns.push({
             name: 'gala'+(con),
-            label: 'Gala J'+(con),
+            label: 'GalaJ'+(con),
             field: 'gala'+(con),
             align: 'left',
             sortable: true
           });
           this.resultadoColumns.push({
             name: 'fol'+(con),
-            label: 'Folklórico J'+(con),
+            label: 'FolkJ'+(con),
             field: 'fol'+(con),
             align: 'left',
             sortable: true
           });
-          // this.resultadoColumns.push({
-          //   name: 'pre'+(con),
-          //   label: 'pre'+(con),
-          //   field: 'pre'+(con),
-          //   align: 'left',
-          //   sortable: true
-          // });
+          this.resultadoColumns.push({
+            name: 'pre'+(con),
+            label: 'Preg'+(con),
+            field: 'pre'+(con),
+            align: 'left',
+            sortable: true
+          });
         }
       });
-      this.resultadoColumns.push({
-        name: 'asistencia',
-        label: 'Asistencia 20Pts',
-        field: 'asistencia',
-        align: 'left',
-        sortable: true
-      });
+      // this.resultadoColumns.push({
+      //   name: 'asistencia',
+      //   label: 'Asistencia 20Pts',
+      //   field: 'asistencia',
+      //   align: 'left',
+      //   sortable: true
+      // });
       this.resultadoColumns.push({
         name: 'total',
         label: 'total',
@@ -96,7 +96,7 @@ export default {
     exportar(){
       let columns=[];
       this.resultadoColumns.forEach((column)=>{
-        columns.push({ label: column.name, value: column.name })
+        columns.push({ label: column.label, value: column.name })
       });
 
 

@@ -10,9 +10,9 @@
       <div class="col-6 col-md-3 flex flex-center">
         <q-btn to="/votacion/nroFol" color="primary" label="traje de folclorico" />
       </div>
-<!--      <div class="col-6 col-md-3 flex flex-center">-->
-<!--        <q-btn to="/votacion/nroPre" color="primary" label="preguntas" />-->
-<!--      </div>-->
+      <div class="col-6 col-md-3 flex flex-center">
+        <q-btn to="/votacion/nroPre" color="primary" label="preguntas" />
+      </div>
     </div>
   </q-page>
 </template>
