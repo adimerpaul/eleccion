@@ -151,7 +151,7 @@
                 Traje folklorico
               </q-item-section>
             </q-item>
-            <q-item clickable exact to="/votacion/nroPre" active-class="bg-blue-grey-6 text-white">
+            <q-item clickable exact to="/votacion/nroPre" v-if="store.user.tipo!='admin'" active-class="bg-blue-grey-6 text-white">
               <q-item-section avatar>
                 <q-icon name="o_credit_card" />
               </q-item-section>
