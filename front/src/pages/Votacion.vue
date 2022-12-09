@@ -7,7 +7,7 @@
           <q-table :rows="predilectas" :filter="filter" :columns="columnsPredilecta" :rows-per-page-options="[0]">
             <template v-slot:header-cell-bano="props">
               <q-th :props="props" auto-width>
-                  <div class="text-bold text-red text-h5">TRAJE DE PRESENTACION</div>
+                  <div class="text-bold text-red text-h5">TRAJE DE BAÑO</div>
                   <div>Dominio de escenario y desplazamiento</div>
                   <div>(1 - 30 pts.)</div>
               </q-th>
@@ -181,7 +181,7 @@ export default {
         this.nro = toParams
         if (this.nro=='nroBano'){
           this.columnsPredilecta.pop()
-          this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE PRESENTACION', field: 'bano', align: 'left'})
+          this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE BAÑO', field: 'bano', align: 'left'})
           this.num=['']
           for (let i = 0; i <= 30; i++) {
             this.num.push(i)
@@ -217,7 +217,7 @@ export default {
    this.nro=( this.$route.params.id)
     if (this.nro=='nroBano'){
       this.columnsPredilecta=[{name: 'predilecta', label: 'Predilecta', field: 'predilecta', align: 'left'}]
-      this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE PRESENTACION', field: 'bano', align: 'left'})
+      this.columnsPredilecta.push({name: 'bano', label: 'TRAJE DE BAÑO', field: 'bano', align: 'left'})
       this.num=['']
       for (let i = 0; i <= 30; i++) {
         this.num.push(i)

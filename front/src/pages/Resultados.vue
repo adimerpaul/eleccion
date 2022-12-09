@@ -47,7 +47,7 @@ export default {
           con++;
           this.resultadoColumns.push({
             name: 'bano'+(con),
-            label: 'PresJ'+(con),
+            label: 'BañoJ'+(con),
             field: 'bano'+(con),
             align: 'left',
             sortable: true

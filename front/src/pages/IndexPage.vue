@@ -2,7 +2,7 @@
   <q-page class="">
     <div class="row">
       <div class="col-6 col-md-3 flex flex-center">
-        <q-btn to="/votacion/nroBano" color="primary" label="traje de presentacion" />
+        <q-btn to="/votacion/nroBano" color="primary" label="traje de baño" />
       </div>
       <div class="col-6 col-md-3 flex flex-center">
         <q-btn to="/votacion/nroGala" color="primary" label="traje de gala" />
